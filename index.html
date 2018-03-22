@@ -1,0 +1,69 @@
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  </head>
+    <body>
+          <main class="container">
+              <h1 class="page-header">
+              Conversor, <small>by osvaldo</small>
+              </h1>
+              <br>
+              <br>
+              <div class="container text-center ">
+                <h1 class="text-info">00101000101000010000010</h1>
+                  <br>
+                  <form class="form-inline">
+                       
+                      <br>
+                      <br> 
+                      <div class="form-group">
+                          <input class="form-control" id="decimal" type="number" placeholder="Decimal/Binario"> 
+                          <submit class="btn btn-default" id="btn-decimal">Convert</submit>
+                          <p>Binario:<b id="binary-number"></b></p>
+                          
+                      </div>
+                      <br>
+                      <br>
+                      <br>
+                      <div class="form-group">
+                          <input class="form-control" id="binario" type="number" placeholder="Binario/Decimal" >  
+                            <submit class="btn btn-default" id="btn-binario">Convert</submit>
+                          <p>Decimal:<b id="decimal-number"></b></p>
+                      </div>   
+                  </form>
+              </div>
+          </main>
+      <script>
+                        function _getById(id) {
+                          return document.getElementById(id);
+                    }
+                        function decimalParaBinario(numero) {
+                          return numero.toString(2);
+                       }
+                       
+                       function deBinarioParaDecimal(numero) {
+                        return parseInt(numero, 2);
+                       }
+
+                    var decimal = _getById("decimal"),
+                        binario = _getById("binario"),
+                        btn_binario = _getById("btn-binario"),
+                        btn_decimal = _getById("btn-decimal"),
+                        d_number = _getById("decimal-number"),
+                        b_number = _getById("binary-number");
+
+                    btn_decimal.onclick = function(){
+                        var num = Number(decimal.value);
+                        b_number.innerHTML = decimalParaBinario(num);
+                             
+                    }
+                    btn_binario.onclick = function(){
+                        var num = Number(binario.value);
+                        d_number.innerHTML = deBinarioParaDecimal(num);      
+                    }
+
+      </script>
+    </body>
+</html>
